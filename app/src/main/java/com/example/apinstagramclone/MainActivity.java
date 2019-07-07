@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if (e == null){
                             if (objects.size() > 0){
                                 for (ParseObject allkickboxer : objects){
-                                    data = data+"Name: "+allkickboxer.get("Name")+"\n";
+                                    data = data+"Name: "+allkickboxer.get("Name")+"-"+allkickboxer.get("PunchPower")+"\n";
                                 }
 
                                 dataShowTV.setText(data);

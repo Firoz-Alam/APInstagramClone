@@ -21,7 +21,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button saveData,dataCollectbtn,allDatabtn;
+    private Button saveData,dataCollectbtn,allDatabtn,nextActivitybtn;
     private EditText nameET,punchSpeedET,punchPowerET,kickSpeedET,kickPowerET;
     private TextView dataShowTV;
     private String data;
@@ -40,14 +40,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dataCollectbtn = findViewById(R.id.collectDatabtn);
         dataShowTV = findViewById(R.id.dataShowTV);
         allDatabtn = findViewById(R.id.allDatabtn);
+        nextActivitybtn = findViewById(R.id.nextactivitybtn);
 
         allDatabtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 data = "";
                 ParseQuery<ParseObject> allQuery = ParseQuery.getQuery("KickBoxer");
+                allQuery.whereGreaterThanOrEqualTo("PunchPower",300);
+
                 allQuery.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> objects, ParseException e) {
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 FancyToast.makeText(MainActivity.this, data, FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
 
                             }else {
-                                FancyToast.makeText(MainActivity.this, e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
+                                FancyToast.makeText(MainActivity.this, "ERROR", FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
                             }
                         }
                     }
@@ -88,6 +89,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
+            }
+        });
+
+        nextActivitybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
             }
         });
 

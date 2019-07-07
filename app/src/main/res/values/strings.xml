@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">APInstagramClone</string>
+    <string name="name">Name</string>
+    <string name="kickBoxerSpeed">Kick Boxer Speed</string>
+    <string name="kickBoxerPunch">Kick Boxer Punch Speed</string>
+    <string name="punchSpeed">Enter Punch Speed</string>
+    <string name="punchPower">Punch Power</string>
+    <string name="kickSpeed">Kick Speed</string>
+    <string name="kickpower">Kick Power</string>
+</resources>

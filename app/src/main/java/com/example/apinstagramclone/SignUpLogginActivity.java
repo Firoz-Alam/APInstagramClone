@@ -9,6 +9,7 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -58,6 +59,17 @@ public class SignUpLogginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+               ParseUser.logInInBackground(loginNameET.getText().toString(), loginPasswordET.getText().toString(), new LogInCallback() {
+                   @Override
+                   public void done(ParseUser user, ParseException e) {
+                       if (user != null && e == null){
+                           FancyToast.makeText(SignUpLogginActivity.this,user.get("username")+" is Loggin Successfully", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                       }else {
+                           FancyToast.makeText(SignUpLogginActivity.this, e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
+
+                       }
+                   }
+               });
             }
         });
 

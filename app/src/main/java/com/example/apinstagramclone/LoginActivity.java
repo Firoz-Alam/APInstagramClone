@@ -1,6 +1,7 @@
 package com.example.apinstagramclone;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.SolverVariable;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if (ParseUser.getCurrentUser() != null){
             ParseUser.getCurrentUser().logOut();
+
         }
     }
 
@@ -71,6 +73,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                                 FancyToast.makeText(LoginActivity.this, user.get("username") + " is Successful Log in!",
                                         FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                                transitionSocialmediaActivity();
                             } else {
 
                                 FancyToast.makeText(LoginActivity.this, " Error !" + e.getMessage(),
@@ -96,5 +99,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             e.printStackTrace();
         }
 
+    }
+
+    public void transitionSocialmediaActivity(){
+        Intent intent = new Intent(LoginActivity.this, SocialMediaActivity.class);
+        startActivity(intent);
     }
 }

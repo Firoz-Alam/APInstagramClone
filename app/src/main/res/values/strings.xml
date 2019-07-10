@@ -7,4 +7,7 @@
     <string name="punchPower">Punch Power</string>
     <string name="kickSpeed">Kick Speed</string>
     <string name="kickpower">Kick Power</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

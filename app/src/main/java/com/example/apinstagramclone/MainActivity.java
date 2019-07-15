@@ -72,7 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.signupbtn:
                 if (emailET.getText().toString().equals("") || nameET.getText().toString().equals("") || passwordET.getText().toString().equals("")){
 
-                    FancyToast.makeText(this,"Email, User Name, Password Required !",FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
+                    FancyToast.makeText(this,"Email, User Name, Password Required !",
+                            FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
 
                 }else {
 

@@ -104,5 +104,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void transitionSocialmediaActivity(){
         Intent intent = new Intent(LoginActivity.this, SocialMediaActivity.class);
         startActivity(intent);
+        finish();
     }
 }
